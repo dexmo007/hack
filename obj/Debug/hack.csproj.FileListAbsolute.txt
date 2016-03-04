@@ -1,0 +1,8 @@
+D:\git\hack\hack\bin\Debug\hack.exe.config
+D:\git\hack\hack\bin\Debug\hack.exe
+D:\git\hack\hack\bin\Debug\hack.pdb
+D:\git\hack\hack\obj\Debug\hack.csprojResolveAssemblyReference.cache
+D:\git\hack\hack\obj\Debug\hack.Properties.Resources.resources
+D:\git\hack\hack\obj\Debug\hack.csproj.GenerateResource.Cache
+D:\git\hack\hack\obj\Debug\hack.exe
+D:\git\hack\hack\obj\Debug\hack.pdb
