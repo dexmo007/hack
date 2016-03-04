@@ -6,7 +6,6 @@ D:\git\hack\hack\obj\Debug\hack.Properties.Resources.resources
 D:\git\hack\hack\obj\Debug\hack.csproj.GenerateResource.Cache
 D:\git\hack\hack\obj\Debug\hack.exe
 D:\git\hack\hack\obj\Debug\hack.pdb
-D:\git_projects\hack\bin\Debug\npp.6.9.Installer.exe
 D:\git_projects\hack\obj\Debug\hack.csprojResolveAssemblyReference.cache
 D:\git_projects\hack\obj\Debug\hack.Properties.Resources.resources
 D:\git_projects\hack\obj\Debug\hack.csproj.GenerateResource.Cache
