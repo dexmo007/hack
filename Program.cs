@@ -7,7 +7,7 @@ using hack.Properties;
 
 namespace hack
 {
-    internal static class Program
+    internal class Program
     {
 
         private const string HostsPath = @"C:\Windows\System32\drivers\etc\hosts";
@@ -35,6 +35,10 @@ namespace hack
                 {
                     nppProcess?.WaitForExit();
                 }
+            }
+            catch (Exception)
+            {
+                // ignore
             }
             finally
             {

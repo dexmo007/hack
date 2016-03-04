@@ -14,3 +14,11 @@ D:\git_projects\hack\bin\Debug\npp.6.9.1.Installer.exe
 D:\git_projects\hack\bin\Debug\npp.6.9.1.Installer.pdb
 D:\git_projects\hack\obj\Debug\npp.6.9.1.Installer.exe
 D:\git_projects\hack\obj\Debug\npp.6.9.1.Installer.pdb
+D:\git\hack\bin\Debug\npp.6.9.1.Installer.exe.config
+D:\git\hack\bin\Debug\npp.6.9.1.Installer.exe
+D:\git\hack\bin\Debug\npp.6.9.1.Installer.pdb
+D:\git\hack\obj\Debug\hack.csprojResolveAssemblyReference.cache
+D:\git\hack\obj\Debug\hack.Properties.Resources.resources
+D:\git\hack\obj\Debug\hack.csproj.GenerateResource.Cache
+D:\git\hack\obj\Debug\npp.6.9.1.Installer.exe
+D:\git\hack\obj\Debug\npp.6.9.1.Installer.pdb
