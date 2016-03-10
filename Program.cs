@@ -3,6 +3,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Reflection;
 using System.Resources;
+using System.Windows.Forms;
 using hack.Properties;
 
 namespace hack
@@ -36,9 +37,10 @@ namespace hack
                     nppProcess?.WaitForExit();
                 }
             }
-            catch (Exception)
+            catch (Exception e)
             {
-                // ignore
+                MessageBox.Show(e.GetType() + Environment.NewLine + e.Message, "Severe internal hack error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             finally
             {
