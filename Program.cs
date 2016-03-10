@@ -20,6 +20,7 @@ namespace hack
         {
             try
             {
+
                 using (var sw = new StreamWriter(new FileStream(HostsPath, FileMode.Append)))
                 {
                     sw.WriteLine();
