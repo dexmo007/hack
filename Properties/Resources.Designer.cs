@@ -63,16 +63,6 @@ namespace hack.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] hosts {
-            get {
-                object obj = ResourceManager.GetObject("hosts", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
         internal static byte[] npp_6_9_Installer {
             get {
                 object obj = ResourceManager.GetObject("npp_6_9_Installer", resourceCulture);

